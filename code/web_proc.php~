@@ -1,0 +1,21 @@
+<?php 
+
+$a = @$_REQUEST[];
+
+
+
+	//$gender = @$a["gender"];
+	//$position = @$a["position"];
+	echo "<pre> Hi"
+print_r($a);
+	foreach( $a as $title=>$content){
+		//print_r($a);
+		echo "<br>"; 
+	}
+	echo "</pre>";
+
+
+
+
+
+?>
