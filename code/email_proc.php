@@ -12,17 +12,26 @@
 			if ( strpos($email,'@ueab.ac.ke') != false) {
 			   
 				//Give a success message and command				
-				$responseArray = makeResponse("SUCCESS", "Loging you in.", '');
+				$responseArray = makeResponse("SUCCESS", "Loging you in.", "");
 				echo json_encode($responseArray);
 				
 			}else{
 				
 				//Let the user know that they require a UEAB account to continue with the survey
-				$responseArray = makeResponse("ERROR", "You need a UEAB email account to continue", '');
-				echo json_encode($responseArray);
+				$responseArray = makeResponse("ERROR", "You need a UEAB email address to continue", "");
+				echo json_encode( $responseArray );
 			}
+			
+		}else{			
+			//Let the user know that they require an email account to continue with the survey
+			$responseArray = makeResponse("ERROR", "Please enter a UEAB email address to continue", "");
+			echo json_encode( $responseArray );
 		}
 		
+	}else{	
+		//Let the user know that they require a valid email address to continue with the survey
+		$responseArray = makeResponse("ERROR", "You need a UEAB email account to continue", "");
+		echo json_encode( $responseArray );
 	}
 		
 	function makeResponse($response, $message, $command){

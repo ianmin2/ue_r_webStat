@@ -13,7 +13,6 @@
  
 		<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-		
 		<!-- PLUGINS CSS -->		
 		<link href="assets/plugins/prettify/prettify.min.css" rel="stylesheet">
 		
@@ -21,6 +20,13 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="assets/css/style-responsive.css" rel="stylesheet">
 		<link href="assets/plugins/font-awesome/css/fa.min.css" rel="stylesheet">
+		<style>
+		li
+		{
+		    list-style-type: none !important;
+		}
+		
+		</style>
  
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -57,8 +63,7 @@
 				
 				<!-- End page heading -->
 						</div>
-					
-											
+																
 						
 						<!-- Begin user session nav -->
 						<ul class="nav-user navbar-right full">
@@ -103,7 +108,7 @@
 	<!-- Email Address Validator -->
 	<div class="alert alert-info center-block alert-bold-border fade in alert-dismissable col-lg-12 " id="doLogin">
 		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">  &times; </button>
-		  <p class="text-muted "><u>Please fill in your email address to continue</u> </p>
+		  <p class="text-muted " id="resp"><u>Please fill in your email address to continue</u> </p>
 			<br>
 		 <div class="row">
 			  <div class="col-lg-12">
@@ -961,11 +966,13 @@
 
 		$(function(){
 			
-			_email      = $("#email");
-			_login      = $("#login");
-			_doLogin    = $("#doLogin");
-			_questions  = $("#questions");
+			_email      = $("#email")
+			_login      = $("#login")
+			_doLogin    = $("#doLogin")
+			_questions  = $("#questions")
 			_user 		= $("#user")
+			_resp 		= $("#resp")
+			
 			//_questions.removeClass("hidden");
 			//_doLogin.addClass("hidden");
 
@@ -980,18 +987,24 @@
 
 								//check if the server returned a success message
 								if(data.response === "SUCCESS"){
+									
 									//HIDE THE EMAIL FIELD AND DISPLAY THE QUESTIONS
 									_doLogin.addClass("hidden");
 									_user.val( _email.val() );
 									//fade the questions in slowly
 									_questions.removeClass("hidden");
 									_questions.fadeIn('slow');
-								}else{
-
 									
+								}else if(data.response === "ERROR"){
+
+									_resp.val();
+									_resp.addClass("text-danger");
+									_resp.removeClass("text-muted");
+									_resp.addClass("h3");
+									_resp.val( data.data["message"] );
 									
 								}
-								//alert(data.response);
+								
 							}
 					);
 				}else{
