@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en" manifest="web.manifest">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="University OF Eastern Africa Baraton Website Assesment Tool By Rose Nyamwamu">
+        <meta name="keywords" content="UEAB Web Analysis, UEAB Website Assesment">
+        <meta name="author" content="Rose Nyamwamu">
+        <link rel="icon" href="favicon.ico">
+
+        <title>UEAB | Website Assesment</title>
+
+        <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link href="assets/plugins/font-awesome/css/fa.min.css" rel="stylesheet">
+        <style>
+            li
+            {
+                list-style-type: none !important;
+            }
+
+        </style>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+
+    <body class="tooltips">
+
+        <!--
+===========================================================
+BEGIN PAGE
+===========================================================
+-->
+        <div class="wrapper">
+            <!-- BEGIN TOP NAV -->
+            <div class="top-navbar">
+                <div class="top-navbar-inner">
+
+                    <!-- Begin Logo brand -->
+                    <div class="logo-brand" style="max-height: 10px;" >
+                        <a href="index.html"><img src="assets/img/sentir-logo-primary.png"  alt="UEAB | Website Assesment"></a>
+                    </div><!-- /.logo-brand -->
+                    <!-- End Logo brand -->
+
+                    <div class="top-nav-content no-right-sidebar" >
+
+
+                        <div class="">
+                            <!-- Begin page heading -->
+                            <h1 class="page-heading " style="color: navy;">UNIVERSITY OF EASTERN AFRICA, BARATON  <span style="color: gray;" > |  </span><small><strong> Website Survey Results</strong></small></h1>
+                            <br>
+
+                            <!-- End page heading -->
+                        </div>
+
+
+                        <!-- Begin user session nav -->
+                        <ul class="nav-user navbar-right full">
+                            <li class="dropdown">
+                                <a href="#notYet" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="assets/img/avatar/avatar-1.jpg" class="avatar img-circle" alt="Avatar">
+
+                                    <strong id="usernom">Displays</strong>
+                                    <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+                                    	<li ><a href="pie_2.html" style="text-decoration: none;" > Basic Pie</a></li>
+                                        <li ><a href="pie.html" style="text-decoration: none;" >Gender based Pie</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="bar_2.html" >Basic Bar</a></li>
+                                        <li><a href="bar.html" >Gender based Bar</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="answers.html">Other Responses</a></li>
+                                    </ul>
+                                </a>
+
+                            </li>
+                        </ul>
+                        <!-- End user session nav -->
+
+                        <!-- Begin Collapse menu nav -->
+
+                        <div class=" collapse navbar-collapse" id="main-fixed-nav">
+
+                        </div><!-- /.navbar-collapse -->
+
+                        <!-- End Collapse menu nav -->
+
+                    </div><!-- /.top-nav-content -->
+
+                </div><!-- /.top-navbar-inner -->
+
+            </div><!-- /.top-navbar -->
+            <!-- END TOP NAV -->
+
+
+
+
+
+            <!-- BEGIN PAGE CONTENT -->
+            <div class="page-content " style="background: white !important;">
+
+                <div class="container-fluid">
+
+                    <br><br><br><br>
+                    <div class="col-lg-12" id="data" >
+						
+											
+						
+					</div>
+		
+
+               </div><!-- /.container-fluid -->
+
+
+				</div>
+
+
+                <!-- BEGIN FOOTER -->
+                <footer id="footer">
+
+                </footer>
+                <!-- END FOOTER -->
+
+
+            </div><!-- /.page-content -->
+        </div><!-- /.wrapper -->
+        <!-- END PAGE CONTENT -->
+
+
+
+
+
+
+        <!--
+===========================================================
+END PAGE
+===========================================================
+-->
+
+        <!--
+===========================================================
+Placed at the end of the document so the pages load faster
+===========================================================
+-->
+        <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/canvasjs.js"></script>
+       
+       <!-- MAIN APPS JS -->
+        <script src="assets/js/apps.js"></script>
+        
+        <script>
+
+        /* GENERATE THE USER INTERFACE [ The chart data placeholders ] */
+			var analysis_fields = [  "q9", "q10", "q11" ];
+			var questions = {
+					"q9": "In your own opinions what improvements would you want to see on the university website?",
+					"q10": "In your opinion is there any other attribute(parameters) that you think should be considered in evaluating the institutions website?",
+					"q11": "Are there any services that you would wish was offered by the website?"
+			};
+			
+			var div_list = "<br>";
+						
+			for( div_id in analysis_fields ){
+			
+				div_list 		+= ( '<div class="bg-info" style=" min-height: 30px; font-face: courier; padding: 2px; border-radius: 8%; ">'+ questions[ analysis_fields[div_id] ] +' </div><br>  <div class="bg-white fly-out"  style="min-height: 20px;"><div id="data_'+ analysis_fields[div_id] +'" style="height: 350px; width: 100%; padding-left: 25px; padding-top: 10px;"></div></div><br> ' ) +"<br><br>";
+				
+			}
+
+			document.getElementById("data").innerHTML = div_list;
+						
+			$(function(){
+				
+				$.post('assesment.php',
+						{ action : 'last_three'},
+						function( response ){
+							var resp = JSON.parse( response );
+							console.log( resp );
+							
+							//display the results
+							//q9
+							for( $data in resp["q9"] ){
+								
+								$("#data_q9").append( resp["q9"][$data] + "<br><br>" );
+								
+							}
+							//q10
+							for( $data in resp["q10"] ){
+								
+								$("#data_q10").append( resp["q10"][$data] + "<br><br>" );
+								
+							}
+							//q11
+							for( $data in resp["q11"] ){
+								
+								$("#data_q11").append( resp["q11"][$data] + "<br><br>" );
+								
+							}
+							
+							
+						});
+				
+								
+			});
+			
+		</script>
+		<div id="scripts"></div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+CACHE MANIFEST
+#v1.0.7.1
+#css
+assets/css/style.css
+assets/css/style-responsive.css
+assets/css/custom.css
+assets/plugins/font-awesome/css/fa.min.css
+assets/plugins/morris-chart/morris.min.css
+
+#js
+assets/plugins/morris-chart/raphael.min.js
+assets/plugins/morris-chart/morris.min.js
+assets/js/jquery.min.js
+assets/js/canvasjs.js
+assets/js/apps.js
+
+NETWORK:
+web.manifest
+*

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" manifest="web.manifest">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="University OF Eastern Africa Baraton Website Assesment Tool By Rose Nyamwamu">
+    <meta name="keywords" content="UEAB Web Analysis, UEAB Website Assesment">
+    <meta name="author" content="Rose Nyamwamu">
+    <link rel="icon" href="favicon.ico">
+
+    <title>UEAB | Website Assesment</title>
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="assets/plugins/font-awesome/css/fa.min.css" rel="stylesheet">
+    <link href="assets/plugins/morris-chart/morris.min.css" rel="stylesheet">
+    <style>
+        li {
+            list-style-type: none !important;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="tooltips">
+
+    <!--
+===========================================================
+BEGIN PAGE
+===========================================================
+-->
+    <div class="wrapper">
+        <!-- BEGIN TOP NAV -->
+        <div class="top-navbar">
+            <div class="top-navbar-inner">
+
+                <!-- Begin Logo brand -->
+                <div class="logo-brand" style="max-height: 10px;">
+                    <a href="index.html"><img src="assets/img/sentir-logo-primary.png" alt="UEAB | Website Assesment">
+                    </a>
+                </div>
+                <!-- /.logo-brand -->
+                <!-- End Logo brand -->
+
+                <div class="top-nav-content no-right-sidebar">
+
+
+                    <div class="">
+                        <!-- Begin page heading -->
+                        <h1 class="page-heading " style="color: navy;">UNIVERSITY OF EASTERN AFRICA, BARATON  <span style="color: gray;" > |  </span><small><strong> Website Survey Results</strong></small></h1>
+                        <br>
+
+                        <!-- End page heading -->
+                    </div>
+
+
+                    <!-- Begin user session nav -->
+                    <ul class="nav-user navbar-right full">
+                        <li class="dropdown">
+                            <a href="#notYet" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="assets/img/avatar/avatar-1.jpg" class="avatar img-circle" alt="Avatar">
+
+                               <strong id="usernom">Displays</strong>
+                                    <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+                                    	<li ><a href="pie_2.html" style="text-decoration: none;" > Basic Pie</a></li>
+                                        <li ><a href="pie.html" style="text-decoration: none;" >Gender based Pie</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="bar_2.html" >Basic Bar</a></li>
+                                        <li><a href="bar.html" >Gender based Bar</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="answers.html">Other Responses</a></li>
+                                    </ul>
+                            </a>
+
+                        </li>
+                    </ul>
+                    <!-- End user session nav -->
+
+                    <!-- Begin Collapse menu nav -->
+
+                    <div class=" collapse navbar-collapse" id="main-fixed-nav">
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+
+                    <!-- End Collapse menu nav -->
+
+                </div>
+                <!-- /.top-nav-content -->
+
+            </div>
+            <!-- /.top-navbar-inner -->
+
+        </div>
+        <!-- /.top-navbar -->
+        <!-- END TOP NAV -->
+
+
+
+
+
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content " style="background: white !important;">
+
+            <div class="container-fluid">
+
+                <br>
+                <br>
+                <br>
+                
+                <div class="col-lg-12 bg-warning" style="min-height: 500px; margin-bottom: 20px;">
+                    <div style="margin: 0 auto; height: 400px; width: 100%; margin-top: 50px;" id="genderstat"></div>
+                </div>
+
+
+                <div class="col-lg-12">
+
+
+                    <div class="bg-info col-lg-6" style="min-height: 500px; width:49%; float: right; ">
+
+                        <div style="margin:0 auto; font: courier; font-size: 45; font-weight: bold; font-color: black;">MALE</div>
+                        <div style="width: 95%; margin: 0 auto;" id="male_data"></div>
+
+                    </div>
+
+                    <div class="bg-success col-lg-6" style="min-height: 500px; width: 49%; float: left; ">
+
+                        <div style="margin:0 auto; font: courier; font-size: 25; font-weight: bold; font-color: white;"> FEMALE</div>
+                        <div style="width: 95%; margin: 0 auto;" id="female_data"></div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+
+
+
+
+            <!-- BEGIN FOOTER -->
+            <footer id="footer">
+
+            </footer>
+            <!-- END FOOTER -->
+
+
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.wrapper -->
+    <!-- END PAGE CONTENT -->
+
+
+
+
+
+
+    <!--
+===========================================================
+END PAGE
+===========================================================
+-->
+
+    <!--
+===========================================================
+Placed at the end of the document so the pages load faster
+===========================================================
+-->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/canvasjs.js"></script>
+    <Script src="assets/plugins/morris-chart/raphael.min.js"></Script>
+    <script src="assets/plugins/morris-chart/morris.min.js"></script>
+
+    <!-- MAIN APPS JS -->
+    <script src="assets/js/apps.js"></script>
+
+    <script>
+        /* GENERATE THE USER INTERFACE [ The chart data placeholders ] */
+        var analysis_fields = ["position", "visits", "easy", "accurate", "explore", "suited", "appealing", "efficiency", "labeled", "navigate", "linkages", "graphics", "_use", "timely", "satisfied", "functionalities", "dialogue", "_accessible", "links", "forms", "broken", "updated", "available", "services", "communication", "_load", "infrastructure", "policies", "protected", "malicious", "protects", "secure", "regularly", "valid", "understand", "varied", "quality", "prompt", "multidimensional", "effective", "languages", "synchronous", "usability", "functionality", "reliability", "eff", "security", "availability"];
+        var questions = {
+            "position": "2. What is your status at UEAB? ",
+            "visits": "3. How often do you visit the UEAB website? ",
+            "easy": "It is easy to find my way to information from the homepage",
+            "accurate": "I am able to accurately predict which section of the website contains the information that am looking for",
+            "explore": "The homepage content makes me want to explore the site further",
+            "suited": "The website is well suited to first time visitors",
+            "appealing": "The site has characteristics that make it appealing. ",
+            "efficiency": "The website contains administration tools which enhance efficiency i.e. Help, FAQ",
+            "labeled": "All functionality is clearly labeled",
+            "navigate": "It is easy to navigate the websitei.e. options to return to home page, top of pages is provided.",
+            "linkages": "There are linkages to other sites that have discussions on similar topics",
+            "graphics": "The selected graphics serve a functional purpose. ",
+            "_use": "I find it easy to use the website.",
+            "timely": "The information posted on the website is always timely.",
+            "satisfied": "I am satisfied by the web content.",
+            "functionalities": "The web services and functionalities are perfect.",
+            "dialogue": "The website offers dialogue areas or feedback features for visitors",
+            "_accessible": "The website is accessible all the time.",
+            "links": "The links work well.",
+            "forms": "The forms on the website are working",
+            "broken": "The website contains some broken links",
+            "updated": "Information on the website is regularly updated",
+            "available": "The website is available 24\/7.",
+            "services": "I always get the information and services that I need from the website.",
+            "communication": "There is communication when the website is down.",
+            "_load": "The website takes a very short time to load.",
+            "infrastructure": "The network infrastructure in the institution is very good and so I can access the website from anywhere on campus.",
+            "policies": "I am aware of the security policies regarding information protection in the institution..",
+            "protected": "I believe that the website is well protected",
+            "malicious": "The website is protected from malicious attacks.",
+            "protects": "The website protects unauthorized modification to information.",
+            "secure": "The website is secure so as to avoid loss of information",
+            "regularly": "The content on the website is regularly updated",
+            "valid": "The information posted on the website is valid and accurate",
+            "understand": "The information presented is easy to understand",
+            "varied": "The content on the website is varied and changing (dynamic)",
+            "quality": "The website shows that the institution considers service quality.",
+            "prompt": "The administrator's responsiveness to users queries is prompt.",
+            "multidimensional": "The website has multidimensional online contact mechanism.",
+            "effective": "Guidelines to users on several online tools are very effective.",
+            "languages": "The website information is available in different languages.",
+            "synchronous": "Online synchronous communication facilities is available on the website.",
+            "usability": "Usability",
+            "functionality": "Functionality",
+            "reliability": "Reliability",
+            "eff": "Efficiency",
+            "security": "Security",
+            "availability": "Availability"
+        };
+
+        var male_div_list = "<br>";
+        var female_div_list = "<br>";
+
+        for (div_id in analysis_fields) {
+
+            male_div_list += ('<div class="bg-warnings" style=" min-height: 30px; font-face: courier; padding: 2px; border-radius: 8%; ">' + questions[analysis_fields[div_id]] + ' </div><br>  <div class="bg-white fly-out"  style="min-height: 20px;"><div id="male_' + analysis_fields[div_id] + '" style="height: 350px; width: 100%;"></div></div><br> ') + "<br><br>";
+            female_div_list += ('<div class="bg-warnings" style=" min-height: 30px; font-face: courier; padding: 2px; border-radius: 8%; ">' + questions[analysis_fields[div_id]] + ' </div><br>   <div class="bg-white fly-out"  style="min-height: 20px;"><div id="female_' + analysis_fields[div_id] + '" style="height: 350px; width: 100%;"></div></div><br> ') + "<br><br>";
+
+        }
+
+        document.getElementById("male_data").innerHTML = male_div_list;
+        document.getElementById("female_data").innerHTML = female_div_list;
+
+        $(function () {
+
+            male = 0;
+            female = 0; 
+            total = 0;
+            
+            $.post('assesment.php', {
+                action: "number_of_peeps" 
+                },
+                function (response) {
+                response = JSON.parse(response);
+                    male = response["male"];
+                    female = response["female"];
+                    total = response["total"];
+
+                    var chart = new CanvasJS.Chart("genderstat", {
+                            theme: "theme2",
+                            title: {
+                                text: " "
+                            },
+                            legend: {
+                                verticalAlign: "bottom",
+                                horizontalAlign: "center"
+                            },
+                            data: [
+                                {
+                                    type: "pie",
+                                    showInLegend: true,
+                                    toolTipContent: " #percent %",
+                                    yValueFormatString: "#0.#,,. ",
+                                    dataPoints: [
+                                        {
+                                            y: male,
+                                            legendText: "male",
+                                            indexLabel: "Male participants"
+                                        },
+                                        {
+                                            y: female,
+                                            legendText: "female",
+                                            indexLabel: "Female participants"
+                                        },
+                                        {
+                                            y: 0,
+                                            legendText: "Total: " + total,
+                                            indexLabel: ""
+                                        }
+                                               ]
+                                               }
+                                               ]
+                        });
+                    chart.render();
+
+
+                }
+            );
+
+
+
+            $.post('assesment.php', {
+                    action: 'get_female_data'
+                },
+                function (response) {
+                    $("#scripts").append(response);
+                });
+
+            $.post('assesment.php', {
+                    action: 'get_male_data'
+                },
+                function (response) {
+                    $("#scripts").append(response);
+                });
+
+        });
+    </script>
+    <div id="scripts"></div>
+</body>
+
+</html>
