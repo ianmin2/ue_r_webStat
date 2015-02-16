@@ -15,7 +15,7 @@ error_reporting(0);
 date_default_timezone_set("Africa/Nairobi");
 $this_site = "eleanor/BitsaQuiz";
 
-$db = 'web'; $host = 'localhost'; $user = 'web'; 
+$db = 'web'; $host = 'localhost'; $user = 'web'; //$driver = 'mysql'; 
 $pass = 'web'; //YOUR_DATABASE_PASSWORD_GOES_HERE
 
 /*
